@@ -1,0 +1,80 @@
+<html>
+<head>
+    <title>Rolling Die App by Vedant More</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+            text-align: center;
+            padding: 50px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            color: #222;
+            margin-bottom: 20px;
+            font-size: 36px;
+            letter-spacing: 1px;
+        }
+
+        img {
+            width: 150px;
+            height: auto;
+            margin: 20px 0;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), 
+                        0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        #result {
+            margin-top: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .btn {
+            margin-top: 20px;
+            padding: 12px 28px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            background: #4CAF50;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, 
+            
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4),
+                        0 6px 12px rgba(0, 0, 0, 0.25);
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎲 Roll the Die 🎲</h1>
+    <img src="d1.png" id="im1"/>
+    <p id="result">Click "Roll" to start</p>
+    <button class="btn" onclick="roll()">Roll</button>
+
+    <script>
+        function roll() {
+            let im1 = document.getElementById("im1");
+            let result = document.getElementById("result");
+            let images = ["d1.png", "d2.png", "d3.png", "d4.png", "d5.png", "d6.png"];
+            let r = Math.floor(Math.random() * images.length);
+            im1.src = images[r];
+            result.innerText = "You rolled a " + (r + 1);
+        }
+    </script>
+</body>
+</html>
